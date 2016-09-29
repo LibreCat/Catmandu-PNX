@@ -94,7 +94,9 @@ sub add {
         $self->fh->print($self->_oai_header());
     }
 
-    $self->fh->print($self->_oai_record_header($id));
+    my $deleted = $data->{deleted} ? 1 : 0;
+
+    $self->fh->print($self->_oai_record_header($id, deleted => $deleted));
     $self->fh->print($self->_pnx_header());
 
     $self->_pnx_tags($data,'control',$PNX_CONTROL_TAGS);
@@ -197,21 +199,30 @@ EOF
 }
 
 sub _oai_record_header {
-    my $id = $_[1];
+    my ($self,$id,%opts) = @_;
+
     my $str =<<EOF;
-    <record>
-      <header>
-        <identifier>$id</identifier>
-      </header>
-      <metadata>
+<record>
+EOF
+
+    if ($opts{deleted}) {
+        $str .= "<header status=\"deleted\">\n";
+    }
+    else {
+        $str .= "<header>\n";
+    }
+
+    $str .= <<EOF;
+<identifier>$id</identifier>
+</header>
+<metadata>
 EOF
     $str;
 }
 
 sub _oai_record_footer {
     my $str =<<EOF;
-    </record>
-  </metadata>
+</metadata>
 </record>
 EOF
     $str;
