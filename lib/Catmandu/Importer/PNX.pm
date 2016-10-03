@@ -13,6 +13,7 @@ use namespace::clean;
 
 with 'Catmandu::Importer';
 
+has 'xpath'    => (is => 'ro' , default => sub { '/oai:OAI-PMH/oai:ListRecords//oai:record/oai:metadata/*' });
 has 'pnx'      => (is => 'lazy');
 
 sub _build_pnx {
@@ -27,7 +28,7 @@ sub generator {
 
         my $match = $reader->nextPatternMatch(
             XML::LibXML::Pattern->new(
-                '/oai:OAI-PMH/oai:ListRecords//oai:record/oai:metadata/*' ,
+                 $self->xpath ,
                  { oai => 'http://www.openarchives.org/OAI/2.0/' }
             )
         );
