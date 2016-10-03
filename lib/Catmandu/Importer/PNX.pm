@@ -23,7 +23,7 @@ sub generator {
     my ($self) = @_;
 
     sub {
-        state $reader = XML::LibXML::Reader->new(IO => $self->file);
+        state $reader = XML::LibXML::Reader->new(IO => $self->fh);
 
         my $match = $reader->nextPatternMatch(
             XML::LibXML::Pattern->new(
@@ -37,12 +37,18 @@ sub generator {
         my $xml = $reader->readOuterXml();
 
         $xml =~ s{xmlns="[^"]+"}{};
-        
+
         return undef unless length $xml;
 
         $reader->nextSibling();
 
-        return $self->pnx->parse($xml);
+        my $data = $self->pnx->parse($xml);
+
+        if (exists $data->{control} && exists $data->{control}->{sourcerecordid}) {
+            $data->{_id} = $data->{control}->{sourcerecordid};
+        }
+
+        return $data;
     };
 }
 
