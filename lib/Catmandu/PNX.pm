@@ -72,7 +72,7 @@ __DATA__
             <xs:element name="sort"    type="sortType"    minOccurs="0" maxOccurs="1"/>
             <xs:element name="dedup"   type="dedupType"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="frbr"    type="frbrType"    minOccurs="0" maxOccurs="1"/>
-            <xs:element name="delivery" type="frbrType"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="delivery" type="deliveryType"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="ranking" type="rankingType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="enrichment" type="enrichmentType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="addata"  type="addataType"  minOccurs="0" maxOccurs="1"/>
@@ -507,9 +507,9 @@ __DATA__
 
     <xs:complexType name="deliveryType">
         <xs:all>
+            <xs:element name="institution" type="xs:string" minOccurs="0"/>
             <xs:element name="delcategory" type="xs:string" minOccurs="0"/>
             <xs:element name="fulltext" type="xs:string" minOccurs="0"/>
-            <xs:element name="institution" type="xs:string" minOccurs="0"/>
             <xs:element name="resdelscope" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
