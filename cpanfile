@@ -10,3 +10,6 @@ on 'test', sub {
 };
 
 requires 'Catmandu', '>= 1.0';
+requires 'XML::Compile', '0';
+requires 'XML::Compile::Cache', '0';
+requires 'XML::LibXML', '0';
