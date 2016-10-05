@@ -33,6 +33,18 @@ This module is based on the [Catmandu](https://metacpan.org/pod/Catmandu) framew
 For more information on Catmandu visit: http://librecat.org/Catmandu/
 or follow the blog posts at: https://librecatproject.wordpress.com/
 
+# DISCLAIMER
+
+    * I'm not a PNX expert.
+    * This project was created as part of the L<Catmandu> project as an example PNX files can be generated from MARC, EAD and others.
+    * All the heavy work is done by the excellent L<XML::Compile> package.
+    * I invite other developers to contribute to this code.
+
+# BUGS, QUESTIONS HELP
+
+Use the github issue tracker for any bug reports or questions on this module:
+https://github.com/LibreCat/Catmandu-PNX/issues
+
 # COPYRIGHT AND LICENSE
 
 Patrick Hochstenbach, 2016 -
