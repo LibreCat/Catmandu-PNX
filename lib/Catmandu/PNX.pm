@@ -1,5 +1,55 @@
 package Catmandu::PNX;
 
+=encoding utf8
+
+=head1 NAME
+
+Catmandu::PNX - Modules for handling PNX data within the Catmandu framework
+
+=head1 SYNOPSIS
+
+Command line client C<catmandu>:
+
+  catmandu convert PNX to JSON --fix myfixes.txt < data/pnx.xml > data/pnx.json
+
+  catmandu convert JSON to PNX --fix myfixes.txt < data/pnx.json > data/pnx.xml
+
+See documentation of modules for more examples.
+
+=head1 DESCRIPTION
+
+Catmandu::PNX contains modules to handle PNX an
+XML Schema for Ex Libris' Primo search engine.
+
+=head1 AVAILABLE MODULES
+
+=over
+
+=item L<Catmandu::Exporter::PNX>
+
+Serialize PNX data
+
+=item L<Catmandu::Importer::PNX>
+
+Parse PNX data
+
+=back
+
+=head1 SEE ALSO
+
+This module is based on the L<Catmandu> framework and L<XML::Compile>.
+For more information on Catmandu visit: http://librecat.org/Catmandu/
+or follow the blog posts at: https://librecatproject.wordpress.com/
+
+=head1 COPYRIGHT AND LICENSE
+
+Patrick Hochstenbach, 2016 -
+
+This is free software; you can redistribute it and/or modify it under the same
+terms as the Perl 5 programming language system itself.
+
+=cut
+
 use Moo;
 
 use XML::Compile;

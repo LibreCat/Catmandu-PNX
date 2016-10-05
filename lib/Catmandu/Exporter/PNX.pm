@@ -134,6 +134,6 @@ This is a L<Catmandu::Exporter> for converting Perl into Primo normalized XML (P
 
 =head1 SEE ALSO
 
-L<Catmandu::Exporter>
+L<Catmandu::Exporter>, L<Catmandu-PNX>
 
 =cut
