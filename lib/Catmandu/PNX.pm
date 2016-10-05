@@ -41,6 +41,13 @@ This module is based on the L<Catmandu> framework and L<XML::Compile>.
 For more information on Catmandu visit: http://librecat.org/Catmandu/
 or follow the blog posts at: https://librecatproject.wordpress.com/
 
+=head1 DISCLAIMER
+
+ * I'm not a PNX expert.
+ * This project was created as part of the L<Catmandu> project as an example PNX files can be generated from MARC, EAD and others. 
+ * All the heavy work is done by the excellent L<XML::Compile> package.
+ * I invite other developers to contribute to this code.
+
 =head1 COPYRIGHT AND LICENSE
 
 Patrick Hochstenbach, 2016 -
