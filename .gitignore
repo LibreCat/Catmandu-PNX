@@ -1,3 +1,4 @@
 .build
 local
 cpanfile.snapshot
+Catmandu-PNX-0.01*
