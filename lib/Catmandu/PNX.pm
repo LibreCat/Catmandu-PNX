@@ -68,7 +68,7 @@ use XML::Compile;
 use XML::Compile::Schema;
 use XML::Compile::Util 'pack_type';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has 'schema'    => (is => 'lazy');
 has 'reader'    => (is => 'lazy');
