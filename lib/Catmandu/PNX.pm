@@ -154,6 +154,7 @@ __DATA__
             <xs:element name="sourcesystem" type="xs:string" minOccurs="0"/>
             <xs:element name="recordtype" type="xs:string" minOccurs="0"/>
             <xs:element name="lastmodified" type="xs:string" minOccurs="0"/>
+            <xs:element name="almaid" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 
