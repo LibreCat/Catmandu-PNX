@@ -18,7 +18,7 @@ require_ok 'Catmandu::Exporter::PNX';
 my $xml = undef;
 
 my $importer = Catmandu->importer('YAML', file => 't/test.yml');
-my $exporter = Catmandu->exporter('PNX',file => \$xml);
+my $exporter = Catmandu->exporter('PNX', file => \$xml);
 
 ok $exporter , 'got a exporter';
 

@@ -107,7 +107,9 @@ sub to_xml {
 	my $doc    = XML::LibXML::Document->new('1.0', 'UTF-8');
 	my $xml    = $self->_writer->($doc, $data);
 	$doc->setDocumentElement($xml);
-	$doc->toString(1);
+	$xml = $doc->toString(1);
+    utf8::decode($xml);
+    $xml;
 }
 
 1;
