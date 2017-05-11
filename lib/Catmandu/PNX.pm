@@ -76,21 +76,12 @@ use XML::Compile;
 use XML::Compile::Schema;
 use XML::Compile::Util 'pack_type';
 
-use constant PNX   => '';
-
 our $VERSION = '0.02';
-has 'mixed'      => (is => 'ro' , default => sub { 'ATTRIBUTES' });
 
+use constant PNX => 'urn:isbn:1-931666-22-9';
 
 has '_reader'    => (is => 'ro');
 has '_writer'    => (is => 'ro');
-
-has 'prefixes'  => (is => 'ro' , default => sub {
-                      [
-                        'ead'   => 'urn:isbn:1-931666-22-9',
-                        'xlink' => 'http://www.w3.org/1999/xlink',
-                      ]
-                    });
 
 sub BUILD {
     my ($self) = @_;
@@ -99,7 +90,9 @@ sub BUILD {
 
     my $schema = XML::Compile::Schema->new();
 
-    $schema->importDefinitions('pnx.xsd');
+    XML::Compile->knownNamespace(&PNX => 'pnx.xsd');
+
+    $schema->importDefinitions(EAD);
 
     $self->{_reader} = $self->schema->compile(READER => '{}record' );
 
