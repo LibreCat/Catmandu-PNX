@@ -53,6 +53,14 @@ or follow the blog posts at: https://librecatproject.wordpress.com/
 Use the github issue tracker for any bug reports or questions on this module:
 https://github.com/LibreCat/Catmandu-PNX/issues
 
+=head1 AUTHOR
+
+Patrick Hochstenbach, C<< patrick.hochstenbach at ugent.be >>
+
+=head1 CONTRIBUTOR
+
+Johann Rolschewski, C<< jorol at cpan.org >>
+
 =head1 COPYRIGHT AND LICENSE
 
 Patrick Hochstenbach, 2016 -

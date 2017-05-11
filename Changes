@@ -1,6 +1,7 @@
 Revision history for Catmandu-PNX
 
 {{$NEXT}}
+  - Fixing encoding errors
 
 0.02  2017-02-23 15:47:13 CET
   - Adding almaid to controlType
