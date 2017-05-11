@@ -22,7 +22,7 @@ sub _build_pnx {
 
 sub generator {
     my ($self) = @_;
-
+    $self->{encoding} = ':raw';
     sub {
         state $reader = XML::LibXML::Reader->new(IO => $self->fh);
 
