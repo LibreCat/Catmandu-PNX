@@ -98,16 +98,16 @@ sub BUILD {
 }
 
 sub parse {
-	my ($self,$input) = @_;
-	$self->_reader->($input);
+    my ($self,$input) = @_;
+    $self->_reader->($input);
 }
 
 sub to_xml {
-	my ($self,$data) = @_;
-	my $doc    = XML::LibXML::Document->new('1.0', 'UTF-8');
-	my $xml    = $self->_writer->($doc, $data);
-	$doc->setDocumentElement($xml);
-	$xml = $doc->toString(1);
+    my ($self,$data) = @_;
+    my $doc    = XML::LibXML::Document->new('1.0', 'UTF-8');
+    my $xml    = $self->_writer->($doc, $data);
+    $doc->setDocumentElement($xml);
+    $xml = $doc->toString(1);
     utf8::decode($xml);
     $xml;
 }
