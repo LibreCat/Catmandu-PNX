@@ -84,9 +84,11 @@ has '_writer'    => (is => 'ro');
 sub BUILD {
     my ($self) = @_;
 
+    XML::Compile->addSchemaDirs(__FILE__);
+
     my $schema = XML::Compile::Schema->new();
 
-    $schema->importDefinitions(substr(__FILE__,0,-3) . '/xsd/pnx.xsd');
+    $schema->importDefinitions('pnx.pm');
 
     $self->{_reader} = $self->schema->compile(READER => '{}record' );
 
