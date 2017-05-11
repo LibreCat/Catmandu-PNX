@@ -78,21 +78,15 @@ use XML::Compile::Util 'pack_type';
 
 our $VERSION = '0.02';
 
-use constant PNX => 'urn:isbn:1-931666-22-9';
-
 has '_reader'    => (is => 'ro');
 has '_writer'    => (is => 'ro');
 
 sub BUILD {
     my ($self) = @_;
 
-    XML::Compile->addSchemaDirs(__FILE__);
-
     my $schema = XML::Compile::Schema->new();
 
-    XML::Compile->knownNamespace(&PNX => 'pnx.xsd');
-
-    $schema->importDefinitions(EAD);
+    $schema->importDefinitions(substr(__FILE__,0,-3) . '/xsd/pnx.xsd');
 
     $self->{_reader} = $self->schema->compile(READER => '{}record' );
 
