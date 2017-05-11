@@ -90,22 +90,22 @@ sub BUILD {
 
     $schema->importDefinitions('pnx.pm');
 
-    $self->{_reader} = $self->schema->compile(READER => '{}record' );
+    $self->{_reader} = $schema->compile(READER => '{}record' );
 
-    $self->{_writer} = $self->schema->compile(WRITER => '{}record' );
+    $self->{_writer} = $schema->compile(WRITER => '{}record' );
 
     $schema = undef;
 }
 
 sub parse {
 	my ($self,$input) = @_;
-	$self->reader->($input);
+	$self->_reader->($input);
 }
 
 sub to_xml {
 	my ($self,$data) = @_;
 	my $doc    = XML::LibXML::Document->new('1.0', 'UTF-8');
-	my $xml    = $self->writer->($doc, $data);
+	my $xml    = $self->_writer->($doc, $data);
 	$doc->setDocumentElement($xml);
 	$doc->toString(1);
 }
