@@ -9,7 +9,7 @@ on 'test', sub {
   requires 'Test::Pod' , '0';
 };
 
-requires 'Catmandu', '>= 1.0';
+requires 'Catmandu', '1.2001';
 requires 'XML::Compile', '0';
 requires 'XML::Compile::Cache', '0';
 requires 'XML::LibXML', '0';
