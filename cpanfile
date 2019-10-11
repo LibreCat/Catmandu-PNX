@@ -13,3 +13,5 @@ requires 'Catmandu', '>= 1.0';
 requires 'XML::Compile', '0';
 requires 'XML::Compile::Cache', '0';
 requires 'XML::LibXML', '0';
+requires 'Moo', '0';
+requires 'namespace::clean', '0';
